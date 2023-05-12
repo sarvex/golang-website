@@ -6,7 +6,7 @@ auth_url = 'http://google.com'
 
 def auth(usr):
 	try:
-		r = urllib.urlopen(auth_url + '/' + usr)
+		r = urllib.urlopen(f'{auth_url}/{usr}')
 		return r.getcode() == 200
 	except:
 		return False

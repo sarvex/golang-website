@@ -19,7 +19,7 @@ def auth_required(myfunc):
 class myHandler(BaseHTTPRequestHandler):
 	@auth_required
 	def do_GET(self):
-		self.wfile.write('Hello, %s!' % self.user)
+		self.wfile.write(f'Hello, {self.user}!')
 
 try:
 	server = HTTPServer(('', PORT_NUMBER), myHandler)
